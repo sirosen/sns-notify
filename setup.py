@@ -1,5 +1,4 @@
 from setuptools import setup
-import salve
 
 readme_text = ''
 changelog_text = ''
@@ -10,11 +9,11 @@ with open('CHANGELOG.rst', 'r') as f:
 
 setup(
     name='sns-notify',
-    version=sns_notify.__version__,
+    version='0.1.0',
 
     install_requires=['argparse', 'boto>=2.34,<3'],
-    packages=[],
-    entry_points={'console_scripts': ['sns-notify = sns_notify:main']},
+    packages=['sns_notify'],
+    entry_points={'console_scripts': ['sns-notify = sns_notify.cli:main']},
 
     description='Simple SNS Notification Sender',
     long_description=readme_text + '\n\n\n' + changelog_text,
